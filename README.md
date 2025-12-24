@@ -51,8 +51,6 @@ module EXPR31 (
     input  wire a, b, cin,   // Inputs
     output wire sum, carry   // Outputs
 );
-
-    // Logic equations
     assign sum   = a ^ b ^ cin;                  // XOR for sum
     assign carry = (a & b) | (b & cin) | (a & cin); // Majority function for carry
 
@@ -61,8 +59,6 @@ module EXPR32 (
     input  wire a, b, bin,       // Inputs
     output wire diff, borrow     // Outputs
 );
-
-    // Logic equations
     assign diff   = a ^ b ^ bin;                  // Difference
     assign borrow = (~a & b) | (~(a ^ b) & bin);  // Borrow logic
 

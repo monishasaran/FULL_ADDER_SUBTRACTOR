@@ -60,7 +60,7 @@ module EXPR32 (
     output wire diff, borrow     // Outputs
 );
     assign diff   = a ^ b ^ bin;                  // Difference
-    assign borrow = (~a & b) | (~(a ^ b) & bin);  // Borrow logic
+    assign borrow =( (~a & c) | (~a&b)|(b&c));
 
 endmodule
 
